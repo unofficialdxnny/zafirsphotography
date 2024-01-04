@@ -23,7 +23,8 @@ body {
   justify-content: center;
   background: rgba(255, 255, 255, 0.9);
   border: 2px solid #333;
-  backface-visibility: hidden; /* Add this line */
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }
 
 .front { transform: translateZ(50vh); }
@@ -39,7 +40,6 @@ h1, p {
 
 nav {
   margin-top: 20px;
-  
 }
 
 .link {
@@ -55,69 +55,4 @@ nav {
 
 .link.home {
   margin-top: 20px;
-}
-
-
-/* .underline {
-  text-decoration: none;
-}
-
-.underline:hover {
-  color: red;
-  text-decoration: underline;
-} */
-
-
-a {
-  position: relative;
-  text-decoration: none;
-  color: #333; /* Change the color as per your design */
-}
-
-a::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #007BFF; /* Change the color as per your design */
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: all 0.3s ease-in-out;
-}
-
-a:hover::before {
-  visibility: visible;
-  transform: scaleX(1);
-}
-
-
-.face.right .about-me {
-  max-width: 400px; /* Adjust the max-width as needed */
-  margin: 0 auto;
-  text-align: justify;
-}
-
-.face.right h1 {
-  font-size: 1.5em;
-  margin-bottom: 10px;
-}
-
-.face.right p {
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.face.right .link.home {
-  display: block;
-  margin-top: 20px;
-  text-align: center;
-  color: #007BFF;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.face.right .link.home:hover {
-  text-decoration: underline;
 }
