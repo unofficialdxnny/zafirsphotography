@@ -1,58 +1,17 @@
-body {
-  margin: 0;
-  overflow: hidden;
-  font-family: 'Arial', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Slabo+27px');
+@import url('https://fonts.googleapis.com/css?family=Raleway:700');
 
-.cube {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  transform-style: preserve-3d;
-  transform: rotateX(0deg) rotateY(0deg);
-  transition: transform 0.5s ease-in-out;
-}
-
-.face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.9);
-  border: 2px solid #333;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-}
-
-.front { transform: translateZ(50vh); }
-.back { transform: rotateY(180deg) translateZ(50vh); }
-.right { transform: rotateY(90deg) translateZ(50vh); }
-.left { transform: rotateY(-90deg) translateZ(50vh); }
-.top { transform: rotateX(90deg) translateZ(50vh); }
-.bottom { transform: rotateX(-90deg) translateZ(50vh); }
-
-h1, p {
+*{
   margin: 0;
 }
 
-nav {
-  margin-top: 20px;
+
+
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
 }
 
-.link {
-  text-decoration: none;
-  color: #333;
-  margin: 0 10px;
-  font-weight: bold;
-}
 
-.link:hover {
-  color: #007BFF;
-}
-
-.link.home {
-  margin-top: 20px;
-}
