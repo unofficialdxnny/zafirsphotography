@@ -1,17 +1,247 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Slabo+27px');
-@import url('https://fonts.googleapis.com/css?family=Raleway:700');
-
 *{
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.1); /* Transparent background */
+  backdrop-filter: blur(10px); /* Background blur for the glassmorphic effect */
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  color: white;
+  font-size: 1.5em;
+}
+
+.nav-links {
+  display: flex;
+  text-shadow: 2.5px 2.5px 1px black; /* Adjust the shadow values as needed */
+
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    background-color: #333;
+    top: 60px;
+    left: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin: 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .bar.open1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .bar.open2 {
+    opacity: 0;
+  }
+
+  .bar.open3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+.main {
+  height: 100vh;
+  background: url('https://picsum.photos/1920/1080') center/cover no-repeat; /* Replace with your image path */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+}
+
+.content {
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  text-shadow: 5px 5px 3px black; /* Adjust the shadow values as needed */
+}
+
+p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  text-shadow: 2.5px 2.5px 1px black; /* Adjust the shadow values as needed */
+}
+
+@media (max-width: 768px) {
+  h1 {
+      font-size: 2em;
+  }
+
+  p {
+      font-size: 1em;
+  }
+}
+
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-logo {
+  font-size: 1.5em;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffcc00;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-logo {
+    margin-bottom: 10px;
+  }
+
+  .footer-links {
+    margin-top: 10px;
+  }
 }
 
 
 
-header {
-  background-color: #333;
-  color: white;
+
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1vh;
+  margin-inline: auto;
+  max-width: 40rem;
+  background: #141414;
+  padding: 1vh;
+}
+
+.gallery > img{
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.gallery:has(img:hover) img:not(:hover) {
+  scale: 0.8;
+  opacity: 0.5;
+  filter: grayscale(70%);
+}
+
+
+.about-me {
+  background-color: #f4f4f4;
+  padding: 50px 0;
+}
+
+.about-me-content {
+  max-width: 800px;
+  margin: 0 auto;
   text-align: center;
-  padding: 20px;
+}
+
+.about-me h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+  text-shadow: 2px 2px 2px black; /* Adjust the shadow values as needed */
+
+}
+
+
+
+.about-me p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+  text-shadow: 0px 0px 0px black; /* Adjust the shadow values as needed */
+
 }
 
 
