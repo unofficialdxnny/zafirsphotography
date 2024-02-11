@@ -103,7 +103,7 @@ body {
 
 .main {
   height: 100vh;
-  background: url('https://picsum.photos/1920/1080') center/cover no-repeat; /* Replace with your image path */
+  background: url('https://cdn.discordapp.com/attachments/1171518027544662067/1205992608963502171/SAM_0183.JPG?ex=65da6324&is=65c7ee24&hm=90a01758145da0be046ce80ab725c66e3ae18f9a916f61368d20e7647780115c&') center/cover no-repeat; /* Replace with your image path */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -190,29 +190,52 @@ p {
 
 
 
-.gallery{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1vh;
-  margin-inline: auto;
-  max-width: 40rem;
-  background: #141414;
-  padding: 1vh;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.gallery > img{
+.gallery {
+  column-count: 4;
+  --webkit-column-count: 4;
+  --moz-column-count: 4;
+  gap: 1rem;
+  padding: 4rem;
+}
+
+.image img {
+  height: auto;
   width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  transition: all 0.3s ease;
 }
 
-.gallery:has(img:hover) img:not(:hover) {
-  scale: 0.8;
-  opacity: 0.5;
-  filter: grayscale(70%);
+/* Responsive-ness for different screen-sizes */
+@media screen and (max-width: 810px) {
+  .gallery {
+    column-count: 3;
+    --webkit-column-count: 3;
+    --moz-column-count: 3;
+  }
 }
 
+@media screen and (max-width: 500px) {
+  .gallery {
+    column-count: 2;
+    --webkit-column-count: 2;
+    --moz-column-count: 2;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .gallery {
+    column-count: 1;
+    --webkit-column-count: 1;
+    --moz-column-count: 1;
+  }
+}
+  
 
 .about-me {
   background-color: #f4f4f4;
