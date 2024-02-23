@@ -1,27 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap');
 
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     font-family: 'play' sans-serif;
     background-color: white;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    
-  }
+}
 
-
-
-  
-  .container {
+.container {
     border: 1px solid #000000;
-
     font-size: 10px;
     width: 100%;
     overflow: hidden;
@@ -29,23 +23,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .container ul {
+}
+
+.container ul {
     list-style: none;
     display: flex;
-  }
-  
-  .container li {
-    margin-right: 20px;
+}
 
-  }
-  
-  .container li:last-child {
-    margin-right: 0; /* Remove margin for the last link */
-  }
-  
-  .container li a {
+.container li {
+    margin-right: 20px;
+}
+
+.container li:last-child {
+    margin-right: 0;
+    /* Remove margin for the last link */
+}
+
+.container li a {
     text-decoration: none;
     padding: 14px 20px;
     font-size: 16px;
@@ -55,17 +49,14 @@
     letter-spacing: 1px;
     transition: all 0.3s ease-in;
     font-family: "Play", sans-serif;
-    
-  }
-  
-  .container li a:hover {
+}
 
+.container li a:hover {
     color: rgb(255, 255, 255);
-  }
-  
-  .content {
-    font-family: "Play", sans-serif;
+}
 
+.content {
+    font-family: "Play", sans-serif;
     display: flex;
     flex-direction: column;
     border-radius: 10px;
@@ -76,15 +67,49 @@
     margin: 20px auto 0;
     width: 88%;
     height: 450px;
-  }
-  
-  @media (max-width: 768px) {
-    .container {
-      width: 100%;
+}
+
+.content .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0f0b02;
+    color: white;
+}
+
+.content .home h1 {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+
+
+.content .home img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (min-width: 768px) {
+    .content .home {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
-  
-    .content {
-      width: 90%;
-      padding: 15px;
+
+    .content .home h1 {
+        max-width: 50%;
+        text-align: left;
     }
-  }
+
+    .content .home img {
+        max-width: 40%;
+    }
+}
+
+
+/* subscribe form */
+
+.mt-6 {
+margin-left: 5%;
+}
+
