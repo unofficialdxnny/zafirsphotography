@@ -1,0 +1,24 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+.main {
+    
+    height: 25vh;
+    background-color: black;
+    background-image: url('https://cdn.discordapp.com/attachments/1223616744979955834/1233898425515376691/SAM_0405.JPG?ex=662ec4f5&is=662d7375&hm=d18e595c09b60de3eee0ac21d83836af2b571ca341e53a55ef0431b8754716cb&');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.main  .main-content {
+    color: white;
+    text-align: center;
+    font-size: larger;
+   
+}
+
