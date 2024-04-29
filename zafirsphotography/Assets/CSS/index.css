@@ -1,24 +1,69 @@
+/* headings font */
+@import url('https://fonts.googleapis.com/css2?family=Martel:wght@200;300;400;600;700;800;900&display=swap');
+/* titles/captions fonts */
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Martel:wght@200;300;400;600;700;800;900&display=swap');
+/* content font */
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Hind:wght@300;400;500;600;700&family=Martel:wght@200;300;400;600;700;800;900&display=swap');
+
 * {
     padding: 0;
     margin: 0;
 }
 
+body {
+    font-family: "Hind", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
 
 .main {
-    
+    position: relative; /* Add position relative to make ::before work */
     height: 25vh;
+    overflow: hidden; /* Hide overflow to prevent blur from leaking */
     background-color: black;
-    background-image: url('https://cdn.discordapp.com/attachments/1223616744979955834/1233898425515376691/SAM_0405.JPG?ex=662ec4f5&is=662d7375&hm=d18e595c09b60de3eee0ac21d83836af2b571ca341e53a55ef0431b8754716cb&');
+    background-image: url('https://media.discordapp.net/attachments/1223616744979955834/1233898425515376691/SAM_0405.JPG?ex=66301675&is=662ec4f5&hm=fba07b6692bd63325d5440c0afb9a6774f127a732a8929479240b620644e90b4&=&format=webp&width=624&height=468');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
+    display: flex;
+    justify-content: center;
 }
 
-.main  .main-content {
+.main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value to control the blur intensity */
+    backdrop-filter: blur(5px); /* Adjust the blur intensity as needed */
+    z-index: 1; /* Ensure the overlay is behind the content */
+}
+
+.main .main-content {
     color: white;
     text-align: center;
     font-size: larger;
-   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Add position relative to allow z-index to work */
+    z-index: 2; /* Ensure the content is above the overlay */
+    height: 100%;
 }
 
+.main .main-content h1 {
+    font-family: "Martel", serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #cccccc;
+}
+
+.main .main-content p {
+    font-family: "Covered By Your Grace", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #cccccc;
+  }
