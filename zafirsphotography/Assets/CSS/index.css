@@ -248,3 +248,23 @@ body {
       text-align: center;
     }
   }
+
+  /* gallery styles */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 images per row */
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Adds a subtle rounded border to images */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow effect */
+    transition: transform 0.3s ease-in-out; /* Smooth hover effect */
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05); /* Slightly zoom in on hover */
+  }
