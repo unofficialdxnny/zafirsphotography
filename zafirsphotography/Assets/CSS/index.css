@@ -5,21 +5,35 @@
 /* content font */
 @import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Hind:wght@300;400;500;600;700&family=Martel:wght@200;300;400;600;700;800;900&display=swap');
 
-* {
-    padding: 0;
+* { 
+    padding: 0; 
     margin: 0;
+    user-select: ;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 body {
     font-family: "Hind", sans-serif;
     font-weight: 500;
     font-style: normal;
+    background-color: #4d4c4e;
 }
 
 .main {
-    position: relative; /* Add position relative to make ::before work */
-    height: 25vh;
-    overflow: hidden; /* Hide overflow to prevent blur from leaking */
+    position: fixed; /* Change to fixed position */
+    top: 0; /* Align to the top of the viewport */
+    left: 0; /* Align to the left of the viewport */
+    width: 100%; /* Cover the full viewport width */
+    height: 100vh; /* Adjust to cover full viewport height */
+    overflow: hidden;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    animation: revealMain 5s ease-out forwards;
+    overflow: hidden; 
     background-color: black;
     background-image: url('https://media.discordapp.net/attachments/1223616744979955834/1233898425515376691/SAM_0405.JPG?ex=66301675&is=662ec4f5&hm=fba07b6692bd63325d5440c0afb9a6774f127a732a8929479240b620644e90b4&=&format=webp&width=624&height=468');
     background-position: center;
@@ -27,6 +41,35 @@ body {
     background-size: cover;
     display: flex;
     justify-content: center;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+/* Animation keyframes */
+@keyframes revealMain {
+    0% {
+        height: 100vh;
+    }
+    100% {
+        height: 25vh;
+    }
+}
+
+/* Content fade-in animation */
+.main .main-content {
+    opacity: 0;
+    animation: fadeInContent 5s ease-out forwards;
+    position: relative; /* Add relative position to allow z-index to work */
+    z-index: 1; /* Ensure content is above the background */
+}
+
+/* Animation keyframes */
+@keyframes fadeInContent {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .main::before {
@@ -66,4 +109,142 @@ body {
     font-weight: 400;
     font-style: normal;
     color: #cccccc;
+  }
+
+
+/* About Section */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    /* height: 75vh; */
+  }
+  
+  .about-section {
+    background-color: ;
+    padding: 50px 0;
+  }
+
+  .about-content h2{
+    font-family: "Martel", serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #cccccc;
+  }
+
+  .about-content p{
+    font-family: "Martel", serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #cccccc;
+  }
+  
+  .about-content {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .about-image {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .about-image img {
+    max-width: 50%;
+    height: auto;
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      flex-direction: row;
+    }
+    
+    .about-content {
+      flex: 2;
+      padding-right: 40px;
+    }
+    
+    .about-image {
+      flex: 1;
+      text-align: center;
+    }
+  }
+
+
+/* equipment section */
+
+.equipment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    /* height: 75vh; */
+    text-align: right;
+  }
+  
+  .equipment-section {
+    background-color: ;
+    padding: 50px 0;
+  }
+
+  .equipment-content h2{
+    font-family: "Martel", serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #cccccc;
+    
+  }
+
+  .equipment-content p{
+    font-family: "Martel", serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #cccccc;
+  }
+
+  .equipment-content ul {
+    font-family: "Martel", serif;
+    font-weight: 900;
+    font-style: normal;
+    color: #cccccc;
+    list-style-type: none;
+
+  }
+  
+  .equipment-content {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .equipment-image {
+    flex: 0.5;
+    text-align: center;
+  }
+  
+  .equipment-image img {
+    max-width: 50%;
+    height: auto;
+  }
+  
+  @media (min-width: 768px) {
+    .equipment-container {
+      flex-direction: row;
+    }
+    
+    .equipment-content {
+      flex: 2;
+      padding-right: 40px;
+    }
+    
+    .equipment-image {
+      flex: 1;
+      text-align: center;
+    }
   }
