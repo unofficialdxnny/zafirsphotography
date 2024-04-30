@@ -8,8 +8,61 @@
 * { 
     padding: 0; 
     margin: 0;
-    user-select: ;
+    user-select: none;
+    scroll-behavior: smooth;
 }
+
+/*===== VARIABLES CSS =====*/
+:root{
+    --header-height: 3rem;
+  
+    /*===== Colors =====*/
+    --first-color: #3E0E12;
+    --first-color-dark: #2F0A0D;
+    --text-color: #524748;
+    --first-color-light: #7B6F71;
+    --first-color-lighten: #FBF9F9;
+  
+    /*===== Font and typography =====*/
+    --body-font: 'Poppins', sans-serif;
+    --biggest-font-size: 2.5rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+  
+    /*===== Font weight =====*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --font-bold: 700;
+  
+    /*===== Margins =====*/
+    --mb-1: .5rem;
+    --mb-2: 1rem;
+    --mb-3: 1.5rem;
+    --mb-4: 2rem;
+    --mb-5: 2.5rem;
+    --mb-6: 3rem;
+  
+    /*===== z index =====*/
+    --z-normal: 1;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+  }
+    
+  @media screen and (min-width: 768px){
+    :root{
+      --biggest-font-size: 4.5rem;
+      --h1-font-size: 2.25rem;
+      --h2-font-size: 1.5rem;
+      --h3-font-size: 1.25rem;
+      --normal-font-size: 1rem;
+      --small-font-size: .875rem;
+      --smaller-font-size: .813rem;
+    }
+  }
 
 ::-webkit-scrollbar {
     display: none;
@@ -19,7 +72,9 @@ body {
     font-family: "Hind", sans-serif;
     font-weight: 500;
     font-style: normal;
-    background-color: #4d4c4e;
+    background-color: #746D75;
+    
+    
 }
 
 .main {
@@ -101,7 +156,8 @@ body {
     font-family: "Martel", serif;
     font-weight: 900;
     font-style: normal;
-    color: #cccccc;
+    color: #EBCFB2;
+    
 }
 
 .main .main-content p {
@@ -133,14 +189,14 @@ body {
     font-family: "Martel", serif;
     font-weight: 900;
     font-style: normal;
-    color: #cccccc;
+    color: #EBCFB2;
   }
 
   .about-content p{
     font-family: "Martel", serif;
     font-weight: 900;
     font-style: normal;
-    color: #cccccc;
+    color: #040F16;
   }
   
   .about-content {
@@ -198,7 +254,7 @@ body {
     font-family: "Martel", serif;
     font-weight: 900;
     font-style: normal;
-    color: #cccccc;
+    color: #EBCFB2;
     
   }
 
@@ -206,7 +262,7 @@ body {
     font-family: "Martel", serif;
     font-weight: 900;
     font-style: normal;
-    color: #cccccc;
+    color: #040F16;
   }
 
   .equipment-content ul {
@@ -267,4 +323,60 @@ body {
   
   .gallery img:hover {
     transform: scale(1.05); /* Slightly zoom in on hover */
+  }
+
+
+/* footer */
+.footer {
+    background-color: var(--first-color-dark);
+    color: var(--first-color-lighten);
+    text-align: center;
+  }
+  
+  .footer__container {
+    padding: 3rem 0;
+  }
+  
+  .footer__title {
+    font-size: var(--h1-font-size);
+    margin-bottom: var(--mb-1);
+    font-weight: var(--font-semi-bold);
+  }
+  
+  .footer__description {
+    margin-bottom: var(--mb-3);
+  }
+  
+  .footer__social {
+    margin-bottom: var(--mb-6);
+  }
+  
+  .footer__link {
+    font-size: 1.4rem;
+    color: var(--first-color-lighten);
+    margin: 0 var(--mb-1);
+    transition: .3s;
+  }
+  
+  .footer__link:hover {
+    color: var(--first-color-light);
+  }
+  
+  .footer__copy {
+    font-size: var(--smaller-font-size);
+    color: var(--first-color-light);
+  }
+  
+  /*===== MEDIA QUERIES =====*/
+  @media screen and (min-width: 768px) {
+    body {
+      margin: 0;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .bd-container {
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
