@@ -1,4 +1,38 @@
+/* fonts */
+/* heading */
 
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap');
+
+.heading {
+    font-family: "Frank Ruhl Libre", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    color: #031926;
+
+  }
+
+/* captions/slogans */
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Life+Savers:wght@400;700;800&display=swap');
+
+.captions {
+    font-family: "Life Savers", serif;
+    font-weight: 900;
+    font-style: bold;
+    color: black;
+
+  }
+
+/* text */
+
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Karma:wght@300;400;500;600;700&family=Life+Savers:wght@400;700;800&display=swap');
+
+.text {
+    font-family: "Karma", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
 * { 
     padding: 0; 
     margin: 0;
@@ -6,102 +40,38 @@
     scroll-behavior: smooth;
 }
 
-
-body {
-    font-family: "Hind", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    
-    
-    
-}
-
 .main {
-    position: fixed; /* Change to fixed position */
-    top: 0; /* Align to the top of the viewport */
-    left: 0; /* Align to the left of the viewport */
-    width: 100%; /* Cover the full viewport width */
-    height: 100vh; /* Adjust to cover full viewport height */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
     overflow: hidden;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    animation: revealMain 5s ease-out forwards;
-    overflow: hidden; 
-    background-image: url('https://media.discordapp.net/attachments/1223616744979955834/1233898425515376691/SAM_0405.JPG?ex=66301675&is=662ec4f5&hm=fba07b6692bd63325d5440c0afb9a6774f127a732a8929479240b620644e90b4&=&format=webp&width=624&height=468');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    z-index: 1000; /* Ensure it appears above other content */
 }
 
-/* Animation keyframes */
-@keyframes revealMain {
-    0% {
-        height: 100vh;
-    }
-    100% {
-        height: 25vh;
-    }
-}
-
-/* Content fade-in animation */
-.main .main-content {
-    opacity: 0;
-    animation: fadeInContent 5s ease-out forwards;
-    position: relative; /* Add relative position to allow z-index to work */
-    z-index: 1; /* Ensure content is above the background */
-}
-
-/* Animation keyframes */
-@keyframes fadeInContent {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
-.main::before {
-    content: '';
+.background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Adjust the alpha value to control the blur intensity */
-    backdrop-filter: blur(5px); /* Adjust the blur intensity as needed */
-    z-index: 1; /* Ensure the overlay is behind the content */
+    background-image: url('https://media.discordapp.net/attachments/1223616744979955834/1234970553538973839/SAM_0183_magicstudio_lw8vkika3of.png?ex=6635f734&is=6634a5b4&hm=9a7b87c1a86f436695ee58f318227222314f5fed9724caaa0d1f3a38147ed49d&=&format=webp&quality=lossless&width=624&height=468');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(7px); /* Adjust the blur amount as needed */
+    z-index: -1; /* Ensure the background is behind other content */
 }
 
-.main .main-content {
-    color: white;
-    text-align: center;
-    font-size: larger;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* Add position relative to allow z-index to work */
-    z-index: 2; /* Ensure the content is above the overlay */
-    height: 100%;
+.main-content {
+    position: relative;
+    z-index: 1; /* Ensure the content is above the background */
+    padding: 20px; /* Adjust padding as needed */
+    color: white; /* Text color */
 }
 
-.main .main-content h1 {
-    font-family: "Martel", serif;
-    font-weight: 900;
-    font-style: normal;
-    color: #EBCFB2;
-    
+.main-content h1 {
+    font-size: 50px;
 }
-
-.main .main-content p {
-    font-family: "Covered By Your Grace", cursive;
-    font-weight: 400;
-    font-style: normal;
-    color: #cccccc;
-  }
-
