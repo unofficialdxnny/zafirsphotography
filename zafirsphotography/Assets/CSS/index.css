@@ -232,5 +232,10 @@
 }
 
 
-/* navbar */
+/* responsive */
 
+@media (max-width: 488px) {
+    .main .main-content h1 {
+        font-size: 25px;
+    }
+}
