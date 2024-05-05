@@ -27,9 +27,29 @@
     <title>zafirsPhotography | Home</title>
     <link rel="stylesheet" href="./Assets/CSS/index.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+
 </head>
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About Me</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#gallery">Gallery</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
 
     <section class="main">
@@ -39,7 +59,71 @@
             <p class="captions">Capturing Life's Moments Through a Lens</p>
         </div>
     </section>
+
+    <div id="about" class="about-me">
+        <h2 class="about-heading">About Me</h2>
+        <p class="about-description">
+            Welcome to Zafir's Photography – where moments come to life through the lens! I am Zafir, a passionate photographer dedicated to capturing the beauty and essence of life in every frame. I am not just a photographer; I am a storyteller with a camera, I approach photography with a blend of artistry and technical skill. Every shoot is a collaborative journey. Photography, for me, is not just about taking pictures; it's about creating memories. I believe in the power of a photograph to evoke emotions, revive memories, and transport us back to the moments that define us.
+        </p>
+        <!-- Social Media Icons -->
+        <div class="social-icons">
+            <a href="#" class="icon heading"><i class="fab fa-facebook-f"></i></a>
+
+            <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+
+    <div id="gallery" class="gallery-section">
+        <h2 class="gallery-heading">Gallery</h2>
+        <section class="gallery">
+            <div>
+                <article>
+                  <img src="./Assets/Images/Gallery/1.png" alt="motorbike 1">
+                </article>
+                <article>
+                  <img src="./Assets/Images/Gallery/2.png" alt="motorbike 2">
+                </article>
+                <article>
+                  <img src="./Assets/Images/Gallery/3.png" alt="notorbike 3">
+                </article>
+            
+              </div>
+              <div>
+                <article>
+                  <img src="./Assets/Images/Gallery/4.JPG" alt="mountains 1">
+                </article>
+                <article>
+                  <img src="./Assets/Images/Gallery/5.JPG" alt="hand">
+                </article>
+                <article>
+                  <img src="./Assets/Images/Gallery/6.JPG" alt="beach">
+                </article>
+            
+              </div>
+              <div>
+                <article>
+                  <img src="./Assets/Images/Gallery/7.JPG" alt="man on rock">
+                </article>
+                <article>
+                  <img src="./Assets/Images/Gallery/8.png" alt="trees">
+                </article>
+                <article>
+                  <img src="./Assets/Images/Gallery/9.png" alt="sky">
+                </article>
+            
+              </div>
+        </section>
+    </div>
+<br><br><br><br><br>
+    <footer class="footer">
+        <p class="text">ZafirsPhotography &copy; <span id="currentYear"></span> All Rights Reserved</p>
+    </footer>
     
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
       <script src="./Assets/JS/index.js"></script>
 </body>
 </html>
