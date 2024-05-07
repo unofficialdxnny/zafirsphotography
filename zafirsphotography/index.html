@@ -29,102 +29,139 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
 </head>
-<body>
+<body class="">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <div class="background blur"></div>
+
+  <!-- navbar bootstrap -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top glassmorphic-navbar">
+    <div class="container">
+        <a onclick="playAudio('./Assets/Audio/click.mp3');" class="navbar-brand" href="#home">ZafirsPhotography</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About Me</a>
+                <li onclick="playAudio('./Assets/Audio/click.mp3');" class="nav-item active">
+                    <a class="nav-link" href="#home">Home</a>
                 </li>
-                <li class="nav-item">
+                <li onclick="playAudio('./Assets/Audio/click.mp3');" class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li onclick="playAudio('./Assets/Audio/click.mp3');" class="nav-item">
+                    <a class="nav-link" href="#equipment">Equipment</a>
+                </li>
+                <li onclick="playAudio('./Assets/Audio/click.mp3');" class="nav-item">
                     <a class="nav-link" href="#gallery">Gallery</a>
                 </li>
+                <li onclick="playAudio('./Assets/Audio/click.mp3');" class="nav-item">
+                  <a class="nav-link" href="#newsletter">NewsLetter</a>
+              </li>
             </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+  <!-- social media icons -->
+  <div class="social-icons">
+    <a onclick="playAudio('./Assets/Audio/click.mp3');" href="https://www.facebook.com/profile.php?id=61555980541030" class="icon" id="facebook-icon" target="_blank">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a onclick="playAudio('./Assets/Audio/click.mp3');" href="https://www.instagram.com/zafirs_photography/" class="icon" id="instagram-icon" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
 
+  <!-- landing Sections -->
+  <div id="home" class="landing-section">
+    <div class="container">
+      <h1>Welcome to ZafirsPhotography</h1>
+      <p>Capturing Life's Moments Through a Lens</p>
+    </div>
+  </div>
 
-    <section class="main">
-        <div class="background"></div>
-        <div class="main-content">
-            <h1 class="heading">ZafirsPhotography</h1>
-            <p class="captions">Capturing Life's Moments Through a Lens</p>
-        </div>
-    </section>
+  <!-- About Me Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+        <h2>About Me</h2>
+        <p>Welcome to Zafir's Photography – where moments come to life through the lens! I am Zafir, a passionate photographer dedicated to capturing the beauty and essence of life in every frame. I am not just a photographer; I am a storyteller with a camera, I approach photography with a blend of artistry and technical skill. Every shoot is a collaborative journey. Photography, for me, is not just about taking pictures; it's about creating memories. I believe in the power of a photograph to evoke emotions, revive memories, and transport us back to the moments that define us.</p>
+    </div>
+</section>
 
-    <br><br><br><br><br><br>
-    <div id="about" class="about-me">
-        <h2 class="about-heading">About Me</h2>
-        <p class="about-description">
-            Welcome to Zafir's Photography – where moments come to life through the lens! I am Zafir, a passionate photographer dedicated to capturing the beauty and essence of life in every frame. I am not just a photographer; I am a storyteller with a camera, I approach photography with a blend of artistry and technical skill. Every shoot is a collaborative journey. Photography, for me, is not just about taking pictures; it's about creating memories. I believe in the power of a photograph to evoke emotions, revive memories, and transport us back to the moments that define us.
-        </p>
-        <!-- Social Media Icons -->
-        <div class="social-icons">
-            <a href="#" class="icon heading"><i class="fab fa-facebook-f"></i></a>
-
-            <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+<!-- tools -->
+<!-- <section class="tools">
+    <div class="container">
+        <h2>Discover Our Tools</h2>
+        <div class="content">
+            <div class="card">
+                <img src="camera-image.jpg" alt="Camera">
+                <div class="info">
+                    <h3>Our Camera</h3>
+                    <p>Insert information about your camera here.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="software-image.jpg" alt="Software">
+                <div class="info">
+                    <h3>Our Software</h3>
+                    <p>Insert information about the software you use here.</p>
+                </div>
+            </div>
         </div>
     </div>
+</section> -->
 
 
-    <div id="gallery" class="gallery-section">
-        <h2 class="gallery-heading">Gallery</h2>
-        <section class="gallery">
-            <div>
-                <article>
-                  <img src="./Assets/Images/Gallery/1.png" alt="motorbike 1">
-                </article>
-                <article>
-                  <img src="./Assets/Images/Gallery/2.png" alt="motorbike 2">
-                </article>
-                <article>
-                  <img src="./Assets/Images/Gallery/3.png" alt="notorbike 3">
-                </article>
-            
-              </div>
-              <div>
-                <article>
-                  <img src="./Assets/Images/Gallery/4.JPG" alt="mountains 1">
-                </article>
-                <article>
-                  <img src="./Assets/Images/Gallery/5.JPG" alt="hand">
-                </article>
-                <article>
-                  <img src="./Assets/Images/Gallery/6.JPG" alt="beach">
-                </article>
-            
-              </div>
-              <div>
-                <article>
-                  <img src="./Assets/Images/Gallery/7.JPG" alt="man on rock">
-                </article>
-                <article>
-                  <img src="./Assets/Images/Gallery/8.png" alt="trees">
-                </article>
-                <article>
-                  <img src="./Assets/Images/Gallery/9.png" alt="sky">
-                </article>
-            
-              </div>
-        </section>
+<section id="gallery" class="gallery">
+  <div class="container">
+    <div class="grid">
+      <!-- 12 Image Items -->
+      <div class="item"><img src="./Assets/Images/Gallery/1.png" alt="Image 1"></div>
+      <div class="item"><img src="./Assets/Images/Gallery/2.png" alt="Image 2"></div>
+      <div class="item"><img src="./Assets/Images/Gallery/3.png" alt="Image 2"></div>
+      <div class="item"><img src="./Assets/Images/Gallery/4.JPG" alt="Image 2"></div>
+      <div class="item"><img src="./Assets/Images/Gallery/5.JPG" alt="Image 2"></div>
+      <div class="item"><img src="./Assets/Images/Gallery/6.JPG" alt="Image 2"></div>
+      <div class="item"><img src="./Assets/Images/Gallery/7.JPG" alt="Image 2"></div>
+      <div class="item"><img src="./Assets/Images/Gallery/9.png" alt="Image 2"></div>
+      <!-- Add more image items here -->
     </div>
-<br><br><br><br><br>
-    <footer class="footer">
-        <p class="text">ZafirsPhotography &copy; <span id="currentYear"></span> All Rights Reserved</p>
-    </footer>
-    
+  </div>
+</section>
+
+
+
+<!-- newsletter section -->
+
+<section id="newsletter" class="newsletter">
+  <div class="container">
+      <div class="newsletter-content">
+          <div class="newsletter-text">
+              <h2>Subscribe to Our Newsletter</h2>
+              <form action="#" method="POST">
+                  <input type="email" name="email" placeholder="Enter your email address" required>
+                  <button type="submit">Subscribe</button>
+              </form>
+          </div>
+          <div class="additional-text">
+              <p>Sign up now and get exclusive offers!</p>
+              <p>Stay updated with our latest news, events, and promotions.</p>
+              <p>Get Equipment Updates</p>
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+<script src="./Assets/JS/index.js"></script>
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-      <script src="./Assets/JS/index.js"></script>
 </body>
 </html>
