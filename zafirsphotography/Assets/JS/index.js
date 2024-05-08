@@ -32,3 +32,31 @@ function playAudio(audioUrl) {
   audio.play();
 }
 
+
+
+//  section active?
+
+function isSectionActive(sectionId) {
+  var section = document.getElementById(sectionId);
+  if (!section) {
+      console.error("Section with id '" + sectionId + "' not found.");
+      return false;
+  }
+
+  var bounding = section.getBoundingClientRect();
+
+  return (
+      bounding.top >= 0 &&
+      bounding.left >= 0 &&
+      bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+window.addEventListener('load', function() {
+  if (isSectionActive("home")) {
+      console.log("The section is active!");
+  } else {
+      console.log("The section is not active.");
+  }
+});

@@ -191,6 +191,7 @@ body, html {
 
   /* About Me Section Styles */
 .about-section {
+  background-color: ;
     color: white; /* Text color */
     padding: 100px 0; /* Adjust vertical padding as needed */
     text-align: center; /* Center align text */
@@ -227,22 +228,22 @@ body, html {
 }
 
 .newsletter {
-    
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height:50vh;
 }
 
 .newsletter-content {
     display: flex;
     flex-direction: column;
-    color: white;
+    color: #333;
 }
 
 .newsletter-text, .additional-text {
     padding: 20px;
-    color: white;
+    color: #333;
 }
 
 .additional-text {
