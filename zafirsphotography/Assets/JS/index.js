@@ -60,3 +60,35 @@ window.addEventListener('load', function() {
       console.log("The section is not active.");
   }
 });
+
+
+// navbar colour change
+
+// Function to update navbar text color based on section intersection
+function updateNavbarColor(entries) {
+    const navbarLinks = document.querySelectorAll('.navbar li a');
+    const isIntersecting = entries.some(entry => entry.isIntersecting);
+    if (isIntersecting) {
+        navbarLinks.forEach(link => {
+            link.style.color = 'black'; // Change text color to black
+        });
+    } else {
+        navbarLinks.forEach(link => {
+            link.style.color = 'white'; // Change text color back to normal
+        });
+    }
+}
+
+// Intersection observer configuration
+const observerOptions = {
+    rootMargin: '-0% 0px', // Adjust this margin as needed
+};
+
+// Create the intersection observer
+const observer = new IntersectionObserver(updateNavbarColor, observerOptions);
+
+// Observe the white sections
+const whiteSections = document.querySelectorAll('.white-section');
+whiteSections.forEach(section => {
+    observer.observe(section);
+});

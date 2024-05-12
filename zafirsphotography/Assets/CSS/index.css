@@ -90,7 +90,20 @@ body, html {
 
   }
 
+  .text-outline {
+    color: white; /* Color of the outline */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000; /* Adjust shadow offsets for outline thickness */
+}
+
   /* navbar */
+
+  .black-text .nav-link {
+    color: black !important;
+}
 
   .nav {
     background-color: transparent;
@@ -108,6 +121,16 @@ body, html {
     font-optical-sizing: auto;
     font-weight: 50px;
     font-style: normal;
+    color: white;
+}
+
+.nav li a .nav-link {
+  color: white;
+}
+
+.no-hover {
+  color: white !important; /* Set the text color to white */
+  text-decoration: none !important; /* Remove underline */
 }
 
 .glassmorphic-navbar {
