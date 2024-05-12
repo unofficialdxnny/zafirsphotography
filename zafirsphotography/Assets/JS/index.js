@@ -94,3 +94,30 @@ whiteSections.forEach(section => {
 });
 
 
+// scrolling 
+
+// Disable scrolling with the mouse wheel
+window.addEventListener('wheel', function(event) {
+    event.preventDefault();
+}, { passive: false });
+
+// Disable scrolling with touch gestures (fingers)
+window.addEventListener('touchmove', function(event) {
+    event.preventDefault();
+}, { passive: false });
+
+// Smooth scroll to section when navbar links are clicked
+document.querySelectorAll('.navbar-nav a').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1); // Get the target section id
+        const targetSection = document.getElementById(targetId); // Find the target section
+        if (targetSection) {
+            // Scroll smoothly to the target section
+            targetSection.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+    });
+});

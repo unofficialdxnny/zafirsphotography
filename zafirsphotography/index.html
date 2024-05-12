@@ -158,8 +158,9 @@
       <div class="newsletter-content">
           <div class="newsletter-text">
               <h2>Subscribe to Our Newsletter</h2>
-              <form action="#" method="POST">
-                  <input type="email" name="email" placeholder="Enter your email address" required>
+              <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="7e9f83fa-cccd-4616-b56d-fbaa0b171626">
+                  <input type="email" name="email" class="contact-inputs" placeholder="Enter your email address" required>
                   <button type="submit">Subscribe</button>
               </form>
           </div>
@@ -183,32 +184,32 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script>
-      // Get all section elements
-const sections = document.querySelectorAll('section');
+//       // Get all section elements
+// const sections = document.querySelectorAll('section');
 
-// Initialize variable to store the index of the current section
-let currentSectionIndex = 0;
+// // Initialize variable to store the index of the current section
+// let currentSectionIndex = 0;
 
-// Function to handle scroll event
-function handleScroll(event) {
-    // Detect the direction of scrolling
-    const delta = Math.sign(event.deltaY);
+// // Function to handle scroll event
+// function handleScroll(event) {
+//     // Detect the direction of scrolling
+//     const delta = Math.sign(event.deltaY);
     
-    // Update the current section index based on the direction of scrolling
-    currentSectionIndex += delta;
+//     // Update the current section index based on the direction of scrolling
+//     currentSectionIndex += delta;
 
-    // Ensure that the currentSectionIndex stays within the bounds of the sections array
-    currentSectionIndex = Math.max(0, Math.min(currentSectionIndex, sections.length - 1));
+//     // Ensure that the currentSectionIndex stays within the bounds of the sections array
+//     currentSectionIndex = Math.max(0, Math.min(currentSectionIndex, sections.length - 1));
 
-    // Scroll the page to the corresponding section
-    sections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
+//     // Scroll the page to the corresponding section
+//     sections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
 
-    // Prevent default scroll behavior
-    event.preventDefault();
-}
+//     // Prevent default scroll behavior
+//     event.preventDefault();
+// }
 
-// Add event listener for mousewheel events
-document.addEventListener('mousewheel', handleScroll);
+// // Add event listener for mousewheel events
+// document.addEventListener('mousewheel', handleScroll);
 
     </script>
 </body>
