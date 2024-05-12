@@ -92,3 +92,5 @@ const whiteSections = document.querySelectorAll('.white-section');
 whiteSections.forEach(section => {
     observer.observe(section);
 });
+
+
