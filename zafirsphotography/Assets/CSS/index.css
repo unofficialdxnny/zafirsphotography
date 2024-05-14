@@ -391,6 +391,7 @@ body, html {
 
 /* tools */
 
+/* Section styles */
 .tools {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 100px 0;
@@ -439,7 +440,7 @@ body, html {
   color: #333;
 }
 
-.software  ul {
+.software ul {
   list-style-type: disc;
   padding-left: 20px;
 }
@@ -462,6 +463,17 @@ body, html {
   max-height: 80px;
 }
 
+/* Animation styles */
+.fly-in-left, .fly-in-right {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Adjust the transition duration */
+}
+
+.animate-fly-in {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
 /* gallery */

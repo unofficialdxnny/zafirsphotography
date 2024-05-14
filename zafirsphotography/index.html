@@ -126,7 +126,7 @@ $(document).on("scroll", function() {
           <img src="./Assets/Images/camera.gif" alt="Camera">
         </div>
       </div>
-      <div class="software animate fly-in-right">
+      <div class="software fly-in-right">
         <h3>Our Software</h3>
         <ul>
           <li>Photoshop: Remove unnecessary elements, adjust focal point</li>
@@ -143,6 +143,39 @@ $(document).on("scroll", function() {
   </div>
 </section>
 
+<script>
+// Animation observer configuration
+const observerConfig = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.5 // Adjust the threshold value as needed
+};
+
+// Callback function to handle intersection changes
+function handleIntersect(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // If the section is intersecting with the viewport
+      entry.target.classList.add('animate-fly-in');
+    } else {
+      // If the section is not intersecting with the viewport
+      entry.target.classList.remove('animate-fly-in');
+    }
+  });
+}
+
+// Create a new IntersectionObserver instance
+const observer = new IntersectionObserver(handleIntersect, observerConfig);
+
+// Target the elements to be observed
+const sectionsToAnimate = document.querySelectorAll('.fly-in-left, .fly-in-right');
+
+// Start observing each target element
+sectionsToAnimate.forEach(section => {
+  observer.observe(section);
+});
+
+</script>
 <script>
   // animations
 
