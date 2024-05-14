@@ -107,6 +107,21 @@ body, html {
     color: black !important;
 }
 
+     /* Add your custom CSS here */
+     @keyframes slideDown {
+      from {
+          transform: translateY(-100%);
+      }
+      to {
+          transform: translateY(0);
+      }
+  }
+
+  .navbar {
+      animation: slideDown 1s ease forwards;
+  }
+
+  
   .nav {
     background-color: transparent;
     
@@ -149,105 +164,134 @@ body, html {
     padding: 0 20px;
 }
 
-  /* social media icons */
-  .social-icons {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    display: flex;
-    flex-direction: column;
-    z-index: 9999; /* Ensure icons appear above other content */
+@keyframes flipRight {
+  from {
+      transform: translateX(-100%);
   }
-  
-  .icon {
-    margin-bottom: 10px; /* Adjust spacing between icons */
+  to {
+      transform: translateX(0);
   }
-  
-  .icon i {
-    font-size: 25px; /* Adjust icon size as needed */
-    color: white; /* Adjust icon color as needed */
-    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition on hover */
-  }
-  
-  .icon i:hover {
-    transform: scale(1.2); /* Scale up a little bit on hover */
-    color: #333; /* Change color to white on hover */
-  }
+}
+
+.social-icons {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  animation: flipRight 0.5s ease forwards;
+}
+
+.icon {
+  margin-bottom: 10px;
+}
+
+.icon i {
+  font-size: 25px;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icon i:hover {
+  transform: scale(1.2);
+  color: #333;
+}
   
 
-  /* landing section */
+ /* landing section */
+.landing-section {
+  color: white; /* Text color */
+  padding: 100px 0; /* Adjust vertical padding as needed */
+  text-align: center; /* Center align text */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Initially set opacity to 0 */
+  animation: fadeIn 3s ease forwards; /* Apply fade-in animation */
+}
 
-  .landing-section {
-    color: white; /* Text color */
-    padding: 100px 0; /* Adjust vertical padding as needed */
-    text-align: center; /* Center align text */
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
+@keyframes fadeIn {
+  from {
+      opacity: 0; /* Start with opacity 0 */
   }
-  
+  to {
+      opacity: 1; /* End with opacity 1 */
+  }
+}
+
+.landing-section h1 {
+  font-size: 48px; /* Adjust heading font size as needed */
+  margin-bottom: 20px; /* Adjust bottom margin as needed */
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 500px;
+  font-style: normal;
+}
+
+.landing-section p {
+  font-size: 30px; /* Adjust paragraph font size as needed */
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media only screen and (max-width: 768px) {
   .landing-section h1 {
-    font-size: 48px; /* Adjust heading font size as needed */
-    margin-bottom: 20px; /* Adjust bottom margin as needed */
-    font-family: "Roboto Slab", serif;
-    font-optical-sizing: auto;
-    font-weight: 500px;
-    font-style: normal;
+      font-size: 36px; /* Smaller font size for mobile */
   }
-  
-  .landing-section p {
-    font-size: 30px; /* Adjust paragraph font size as needed */
-    font-family: "Pacifico", cursive;
-    font-weight: 400;
-    font-style: normal;
-    
-  }
-  
 
-  @media only screen and (max-width: 768px) {
-    .landing-section h1 {
-        font-size: 36px; /* Smaller font size for mobile */
-    }
-    
-    .landing-section p {
+  .landing-section p {
       font-size: 20px; /* Smaller font size for mobile */
   }
 }
 
-  /* about me */
-
-  /* About Me Section Styles */
+/* Your existing CSS styles for the About Me section */
 .about-section {
-  background-color: ;
-    color: white; /* Text color */
-    padding: 100px 0; /* Adjust vertical padding as needed */
-    text-align: center; /* Center align text */
-    display: ; /* Initially hide the about section */
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .about-section h2 {
-    font-size: 48px; /* Adjust heading font size as needed */
-    margin-bottom: 20px; /* Adjust bottom margin as needed */
-    font-family: "Roboto Slab", serif;
-    font-optical-sizing: auto;
-    font-weight: 500px;
-    font-style: normal;
-  }
-  
-  .about-section p {
-    font-size: 20px; /* Adjust heading font size as needed */
-    margin-bottom: 20px; /* Adjust bottom margin as needed */
-    font-family: "Lato", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-  }
-  
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.about-section.fade-in {
+  opacity: 1;
+}
+
+.about-section h2 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 500px;
+  font-style: normal;
+}
+
+.about-section p {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-family: "Lato", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Additional styles for scroll animation */
+.tag {
+  opacity: 0;
+  transform: translate(0, 10vh);
+  transition: all 1s;
+}
+
+.tag.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
 
   /* newsletter */
   .container {

@@ -1,4 +1,15 @@
-document.getElementById("currentYear").innerText = new Date().getFullYear();
+// document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+// animations
+
+    // Wait for navbar animation to finish
+    const navbar = document.querySelector('.navbar');
+    navbar.addEventListener('animationend', () => {
+        // Trigger icon animation
+        const socialIcons = document.querySelector('.social-icons');
+        socialIcons.classList.add('animate-icons');
+    }, { once: true }); // Ensure the event listener only runs once
+xt = new Date().getFullYear();
 
 // navbar
 
@@ -96,15 +107,15 @@ whiteSections.forEach(section => {
 
 // scrolling 
 
-// Disable scrolling with the mouse wheel
-window.addEventListener('wheel', function(event) {
-    event.preventDefault();
-}, { passive: false });
+// // Disable scrolling with the mouse wheel
+// window.addEventListener('wheel', function(event) {
+//     event.preventDefault();
+// }, { passive: false });
 
-// Disable scrolling with touch gestures (fingers)
-window.addEventListener('touchmove', function(event) {
-    event.preventDefault();
-}, { passive: false });
+// // Disable scrolling with touch gestures (fingers)
+// window.addEventListener('touchmove', function(event) {
+//     event.preventDefault();
+// }, { passive: false });
 
 // Smooth scroll to section when navbar links are clicked
 document.querySelectorAll('.navbar-nav a').forEach(anchor => {
@@ -121,3 +132,4 @@ document.querySelectorAll('.navbar-nav a').forEach(anchor => {
         }
     });
 });
+

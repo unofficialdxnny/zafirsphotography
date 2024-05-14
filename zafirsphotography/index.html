@@ -31,6 +31,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 </head>
 <body class="">
@@ -88,48 +89,95 @@
 </section>
 
   <!-- About Me Section -->
-  <section id="about" class="about-section">
+  <section id="about" class="about-section fade-in">
     <div class="container">
         <h2>About Me</h2>
         <p>Welcome to Zafir's Photography – where moments come to life through the lens! I am Zafir, a passionate photographer dedicated to capturing the beauty and essence of life in every frame. I am not just a photographer; I am a storyteller with a camera, I approach photography with a blend of artistry and technical skill. Every shoot is a collaborative journey. Photography, for me, is not just about taking pictures; it's about creating memories. I believe in the power of a photograph to evoke emotions, revive memories, and transport us back to the moments that define us.</p>
     </div>
 </section>
 
+<script>
+  // about us
+
+$(document).on("scroll", function() {
+    var pageTop = $(document).scrollTop();
+    var pageBottom = pageTop + $(window).height();
+    var aboutSection = $(".about-section");
+  
+    if (aboutSection.position().top < pageBottom) {
+      aboutSection.addClass("visible");
+    } else {
+      aboutSection.removeClass("visible");
+    }
+  });
+</script>
+
 <!-- tools -->
 <section id="equipment" class="tools white-section">
   <div class="container">
-      <h2>Discover Our Tools</h2>
-      <div class="content">
-          <div class="tool-description">
-              <div class="info">
-                  <h3>Camera</h3>
-                  <ul>
-                    <li>Samsung WB100 26x Optical Zoom (Wide)</li>
-                  </ul>
-                  <img src="./Assets/Images/camera.gif" alt="Camera">
-
-              </div>
-          </div>
-          <div class="software">
-              <h3>Our Software</h3>
-
-              <ul>
-                <li>Photoshop: Remove unnecessary elements, adjust focal point</li>
-                <li>Lightroom: Sharpen, enhance visual appeal</li>
-              </ul>
-
-              <div class="logos">
-                  <!-- Add logos or icons here -->
-                  <img src="./Assets/Images/photoshop-lightroom.png" alt="Software 1">
-                  <img src="./Assets/Images/photoshop.png" alt="Software 2">
-                  <!-- Add more logos or icons as needed -->
-              </div>
-
-              
-          </div>
+    <h2>Discover Our Tools</h2>
+    <div class="content animate fly-in-left">
+      <div class="tool-description">
+        <div class="info">
+          <h3>Camera</h3>
+          <ul>
+            <li>Samsung WB100 26x Optical Zoom (Wide)</li>
+          </ul>
+          <img src="./Assets/Images/camera.gif" alt="Camera">
+        </div>
       </div>
+      <div class="software animate fly-in-right">
+        <h3>Our Software</h3>
+        <ul>
+          <li>Photoshop: Remove unnecessary elements, adjust focal point</li>
+          <li>Lightroom: Sharpen, enhance visual appeal</li>
+        </ul>
+        <div class="logos">
+          <!-- Add logos or icons here -->
+          <img src="./Assets/Images/photoshop-lightroom.png" alt="Software 1">
+          <img src="./Assets/Images/photoshop.png" alt="Software 2">
+          <!-- Add more logos or icons as needed -->
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<script>
+  // animations
+
+  
+</script>
+<script>
+  // window.addEventListener("DOMContentLoaded", function() {
+  //   window.addEventListener("scroll", function() {
+  //     var section = document.getElementById("equipment");
+  //     var sectionTop = section.offsetTop;
+  //     var sectionBottom = sectionTop + section.offsetHeight;
+  //     var viewportTop = window.pageYOffset || document.documentElement.scrollTop;
+  //     var viewportBottom = viewportTop + window.innerHeight;
+
+  //     var flyInLeftElements = document.querySelectorAll('.animate.fly-in-left');
+  //     var flyInRightElements = document.querySelectorAll('.animate.fly-in-right');
+
+  //     if (sectionBottom > viewportTop && sectionTop < viewportBottom) {
+  //       flyInLeftElements.forEach(function(element) {
+  //         element.classList.add('animate-fly-in-left');
+  //       });
+  //       flyInRightElements.forEach(function(element) {
+  //         element.classList.add('animate-fly-in-right');
+  //       });
+  //     } else {
+  //       flyInLeftElements.forEach(function(element) {
+  //         element.classList.remove('animate-fly-in-left');
+  //       });
+  //       flyInRightElements.forEach(function(element) {
+  //         element.classList.remove('animate-fly-in-right');
+  //       });
+  //     }
+  //   });
+  // });
+</script>
 
 
 <section id="gallery" class="gallery">
@@ -182,6 +230,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
     <script>
 //       // Get all section elements
