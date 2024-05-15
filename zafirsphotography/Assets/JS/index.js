@@ -137,7 +137,6 @@ document.querySelectorAll('.navbar-nav a').forEach(anchor => {
 
 // animations 
 
-
 document.addEventListener('DOMContentLoaded', function() {
     // Animation observer configuration
     const observerConfig = {
@@ -145,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
         rootMargin: '0px',
         threshold: 0.5 // Adjust the threshold value as needed
     };
-  
+
     // Callback function to handle intersection changes
     function handleIntersect(entries, observer) {
         entries.forEach(entry => {
@@ -165,6 +164,22 @@ document.addEventListener('DOMContentLoaded', function() {
                         }, index * 500); // Adjust the delay as needed (500ms here for 0.5s delay)
                     });
                 }
+
+                // For newsletter section
+                if (entry.target.classList.contains('newsletter')) {
+                    entry.target.querySelectorAll('h2').forEach(h2 => {
+                        h2.style.animationPlayState = 'running';
+                    });
+                    
+                    entry.target.querySelector('form').style.animationPlayState = 'running';
+                    
+                    // Apply fade-in animation to additional text paragraphs
+                    entry.target.querySelectorAll('.additional-text p').forEach((p, index) => {
+                        setTimeout(() => {
+                            p.style.opacity = '1'; // Change opacity to 1
+                        }, index * 500); // Delay each paragraph by 0.5s
+                    });
+                }
             } else {
                 // If the section is not intersecting with the viewport
                 if (entry.target.classList.contains('about-section')) {
@@ -179,30 +194,50 @@ document.addEventListener('DOMContentLoaded', function() {
                         item.classList.remove('animate-item');
                     });
                 }
+
+                // For newsletter section
+                if (entry.target.classList.contains('newsletter')) {
+                    entry.target.querySelectorAll('h2').forEach(h2 => {
+                        h2.style.animationPlayState = 'paused';
+                    });
+                    
+                    entry.target.querySelector('form').style.animationPlayState = 'paused';
+                    
+                    // Reset opacity of additional text paragraphs when not intersecting
+                    entry.target.querySelectorAll('.additional-text p').forEach(p => {
+                        p.style.opacity = '0'; // Change opacity to 0
+                    });
+                }
             }
         });
     }
-  
+
     // Create a new IntersectionObserver instance
     const observer = new IntersectionObserver(handleIntersect, observerConfig);
-  
+
     // Target the elements to be observed for fly-in animation
     const sectionsToAnimate = document.querySelectorAll('.fly-in-left, .fly-in-right');
-  
+
     // Start observing each target element for fly-in animation
     sectionsToAnimate.forEach(section => {
         observer.observe(section);
     });
-  
+
     // Target the About Me section for fade-in animation
     const aboutSection = document.querySelector('.about-section');
-  
+
     // Start observing the About Me section for fade-in animation
     observer.observe(aboutSection);
-  
+
     // Target the gallery section
     const gallerySection = document.querySelector('.gallery');
-  
+
     // Start observing the gallery section
     observer.observe(gallerySection);
+
+    // Target the newsletter section
+    const newsletterSection = document.querySelector('#newsletter');
+
+    // Start observing the newsletter section
+    observer.observe(newsletterSection);
 });
