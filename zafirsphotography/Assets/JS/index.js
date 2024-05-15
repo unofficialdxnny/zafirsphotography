@@ -133,3 +133,51 @@ document.querySelectorAll('.navbar-nav a').forEach(anchor => {
     });
 });
 
+
+// tools animation
+document.addEventListener('DOMContentLoaded', function() {
+    // Animation observer configuration
+    const observerConfig = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5 // Adjust the threshold value as needed
+    };
+  
+    // Callback function to handle intersection changes
+    function handleIntersect(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // If the section is intersecting with the viewport
+                if (entry.target.classList.contains('about-section')) {
+                    entry.target.classList.add('fade-in');
+                } else {
+                    entry.target.classList.add('animate-fly-in');
+                }
+            } else {
+                // If the section is not intersecting with the viewport
+                if (entry.target.classList.contains('about-section')) {
+                    entry.target.classList.remove('fade-in');
+                } else {
+                    entry.target.classList.remove('animate-fly-in');
+                }
+            }
+        });
+    }
+  
+    // Create a new IntersectionObserver instance
+    const observer = new IntersectionObserver(handleIntersect, observerConfig);
+  
+    // Target the elements to be observed for fly-in animation
+    const sectionsToAnimate = document.querySelectorAll('.fly-in-left, .fly-in-right');
+  
+    // Start observing each target element for fly-in animation
+    sectionsToAnimate.forEach(section => {
+        observer.observe(section);
+    });
+  
+    // Target the About Me section for fade-in animation
+    const aboutSection = document.querySelector('.about-section');
+  
+    // Start observing the About Me section for fade-in animation
+    observer.observe(aboutSection);
+});

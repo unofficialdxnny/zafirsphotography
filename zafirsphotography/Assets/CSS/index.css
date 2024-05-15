@@ -201,7 +201,8 @@ body, html {
 
  /* landing section */
 .landing-section {
-  color: white; /* Text color */
+  background-image: url('https://thumbs.dreamstime.com/b/hand-drawn-doodle-photography-seamless-pattern-vector-illustration-symbol-collection-hand-drawn-doodle-photography-seamless-108084067.jpg');
+  color: black; /* Text color */
   padding: 100px 0; /* Adjust vertical padding as needed */
   text-align: center; /* Center align text */
   height: 100vh;
@@ -211,6 +212,8 @@ body, html {
   opacity: 0; /* Initially set opacity to 0 */
   animation: fadeIn 3s ease forwards; /* Apply fade-in animation */
 }
+
+
 
 @keyframes fadeIn {
   from {
@@ -250,13 +253,14 @@ body, html {
 /* Your existing CSS styles for the About Me section */
 .about-section {
   color: white;
+  height: 100vh;
   padding: 100px 0;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease-in;
 }
 
 .about-section.fade-in {
@@ -268,7 +272,7 @@ body, html {
   margin-bottom: 20px;
   font-family: "Roboto Slab", serif;
   font-optical-sizing: auto;
-  font-weight: 500px;
+  font-weight: 500;
   font-style: normal;
 }
 

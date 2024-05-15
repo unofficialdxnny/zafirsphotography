@@ -96,21 +96,7 @@
     </div>
 </section>
 
-<script>
-  // about us
 
-$(document).on("scroll", function() {
-    var pageTop = $(document).scrollTop();
-    var pageBottom = pageTop + $(window).height();
-    var aboutSection = $(".about-section");
-  
-    if (aboutSection.position().top < pageBottom) {
-      aboutSection.addClass("visible");
-    } else {
-      aboutSection.removeClass("visible");
-    }
-  });
-</script>
 
 <!-- tools -->
 <section id="equipment" class="tools white-section">
@@ -143,74 +129,7 @@ $(document).on("scroll", function() {
   </div>
 </section>
 
-<script>
-// Animation observer configuration
-const observerConfig = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.5 // Adjust the threshold value as needed
-};
 
-// Callback function to handle intersection changes
-function handleIntersect(entries, observer) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      // If the section is intersecting with the viewport
-      entry.target.classList.add('animate-fly-in');
-    } else {
-      // If the section is not intersecting with the viewport
-      entry.target.classList.remove('animate-fly-in');
-    }
-  });
-}
-
-// Create a new IntersectionObserver instance
-const observer = new IntersectionObserver(handleIntersect, observerConfig);
-
-// Target the elements to be observed
-const sectionsToAnimate = document.querySelectorAll('.fly-in-left, .fly-in-right');
-
-// Start observing each target element
-sectionsToAnimate.forEach(section => {
-  observer.observe(section);
-});
-
-</script>
-<script>
-  // animations
-
-  
-</script>
-<script>
-  // window.addEventListener("DOMContentLoaded", function() {
-  //   window.addEventListener("scroll", function() {
-  //     var section = document.getElementById("equipment");
-  //     var sectionTop = section.offsetTop;
-  //     var sectionBottom = sectionTop + section.offsetHeight;
-  //     var viewportTop = window.pageYOffset || document.documentElement.scrollTop;
-  //     var viewportBottom = viewportTop + window.innerHeight;
-
-  //     var flyInLeftElements = document.querySelectorAll('.animate.fly-in-left');
-  //     var flyInRightElements = document.querySelectorAll('.animate.fly-in-right');
-
-  //     if (sectionBottom > viewportTop && sectionTop < viewportBottom) {
-  //       flyInLeftElements.forEach(function(element) {
-  //         element.classList.add('animate-fly-in-left');
-  //       });
-  //       flyInRightElements.forEach(function(element) {
-  //         element.classList.add('animate-fly-in-right');
-  //       });
-  //     } else {
-  //       flyInLeftElements.forEach(function(element) {
-  //         element.classList.remove('animate-fly-in-left');
-  //       });
-  //       flyInRightElements.forEach(function(element) {
-  //         element.classList.remove('animate-fly-in-right');
-  //       });
-  //     }
-  //   });
-  // });
-</script>
 
 
 <section id="gallery" class="gallery">
@@ -226,6 +145,8 @@ sectionsToAnimate.forEach(section => {
       <div class="item"><a href=""><img src="./Assets/Images/Gallery/7.JPG" alt="Image 2"></div></a>
       <div class="item"><a href=""><img src="./Assets/Images/Gallery/9.png" alt="Image 2"></div></a>
       <!-- Add more image items here -->
+      <br>
+
     </div>
   </div>
 </section>
@@ -265,34 +186,6 @@ sectionsToAnimate.forEach(section => {
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
-    <script>
-//       // Get all section elements
-// const sections = document.querySelectorAll('section');
-
-// // Initialize variable to store the index of the current section
-// let currentSectionIndex = 0;
-
-// // Function to handle scroll event
-// function handleScroll(event) {
-//     // Detect the direction of scrolling
-//     const delta = Math.sign(event.deltaY);
     
-//     // Update the current section index based on the direction of scrolling
-//     currentSectionIndex += delta;
-
-//     // Ensure that the currentSectionIndex stays within the bounds of the sections array
-//     currentSectionIndex = Math.max(0, Math.min(currentSectionIndex, sections.length - 1));
-
-//     // Scroll the page to the corresponding section
-//     sections[currentSectionIndex].scrollIntoView({ behavior: 'smooth' });
-
-//     // Prevent default scroll behavior
-//     event.preventDefault();
-// }
-
-// // Add event listener for mousewheel events
-// document.addEventListener('mousewheel', handleScroll);
-
-    </script>
 </body>
 </html>
