@@ -1,143 +1,16 @@
-// document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+
 
 // animations
 
-    // Wait for navbar animation to finish
-    const navbar = document.querySelector('.navbar');
-    navbar.addEventListener('animationend', () => {
-        // Trigger icon animation
-        const socialIcons = document.querySelector('.social-icons');
-        socialIcons.classList.add('animate-icons');
-    }, { once: true }); // Ensure the event listener only runs once
-xt = new Date().getFullYear();
-
-// navbar
-
-// content scroll
-
-// update navbar
-
-$(document).ready(function() {
-  // Highlight active section in navbar
-  $(window).on('scroll', function() {
-      var scrollPosition = $(window).scrollTop();
-
-      $('.section').each(function() {
-          var sectionOffset = $(this).offset().top - 50; // Adjusted offset to trigger earlier
-          var sectionHeight = $(this).outerHeight();
-          var sectionId = $(this).attr('id');
-          var navItem = $('.navbar-nav').find('[href="#' + sectionId + '"]');
-          
-          if (scrollPosition >= sectionOffset && scrollPosition < sectionOffset + sectionHeight) {
-              navItem.addClass('active');
-          } else {
-              navItem.removeClass('active');
-          }
-      });
-  });
-});
-
-
-function playAudio(audioUrl) {
-  var audio = new Audio(audioUrl);
-  audio.play();
-}
-
-
-
-//  section active?
-
-function isSectionActive(sectionId) {
-  var section = document.getElementById(sectionId);
-  if (!section) {
-      console.error("Section with id '" + sectionId + "' not found.");
-      return false;
-  }
-
-  var bounding = section.getBoundingClientRect();
-
-  return (
-      bounding.top >= 0 &&
-      bounding.left >= 0 &&
-      bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-      bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-window.addEventListener('load', function() {
-  if (isSectionActive("home")) {
-      console.log("The section is active!");
-  } else {
-      console.log("The section is not active.");
-  }
-});
-
-
-// navbar colour change
-
-// Function to update navbar text color based on section intersection
-function updateNavbarColor(entries) {
-    const navbarLinks = document.querySelectorAll('.navbar li a');
-    const isIntersecting = entries.some(entry => entry.isIntersecting);
-    if (isIntersecting) {
-        navbarLinks.forEach(link => {
-            link.style.color = 'black'; // Change text color to black
-        });
-    } else {
-        navbarLinks.forEach(link => {
-            link.style.color = 'white'; // Change text color back to normal
-        });
-    }
-}
-
-// Intersection observer configuration
-const observerOptions = {
-    rootMargin: '-0% 0px', // Adjust this margin as needed
-};
-
-// Create the intersection observer
-const observer = new IntersectionObserver(updateNavbarColor, observerOptions);
-
-// Observe the white sections
-const whiteSections = document.querySelectorAll('.white-section');
-whiteSections.forEach(section => {
-    observer.observe(section);
-});
-
-
-// scrolling 
-
-// // Disable scrolling with the mouse wheel
-// window.addEventListener('wheel', function(event) {
-//     event.preventDefault();
-// }, { passive: false });
-
-// // Disable scrolling with touch gestures (fingers)
-// window.addEventListener('touchmove', function(event) {
-//     event.preventDefault();
-// }, { passive: false });
-
-// Smooth scroll to section when navbar links are clicked
-document.querySelectorAll('.navbar-nav a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        const targetId = this.getAttribute('href').substring(1); // Get the target section id
-        const targetSection = document.getElementById(targetId); // Find the target section
-        if (targetSection) {
-            // Scroll smoothly to the target section
-            targetSection.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-
-
-// animations 
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Cache DOM elements
+    const sectionsToAnimate = document.querySelectorAll('.fly-in-left, .fly-in-right');
+    const aboutSection = document.querySelector('.about-section');
+    const gallerySection = document.querySelector('.gallery');
+    const newsletterSection = document.querySelector('#newsletter');
+
     // Animation observer configuration
     const observerConfig = {
         root: null,
@@ -146,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Callback function to handle intersection changes
-    function handleIntersect(entries, observer) {
+    function handleIntersect(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // If the section is intersecting with the viewport
@@ -158,10 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // For gallery section
                 if (entry.target.classList.contains('gallery')) {
-                    entry.target.querySelectorAll('.item').forEach((item, index) => {
-                        setTimeout(() => {
-                            item.classList.add('animate-item');
-                        }, index * 500); // Adjust the delay as needed (500ms here for 0.5s delay)
+                    entry.target.querySelectorAll('.item').forEach(item => {
+                        item.classList.add('animate-item');
                     });
                 }
 
@@ -174,10 +45,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     entry.target.querySelector('form').style.animationPlayState = 'running';
                     
                     // Apply fade-in animation to additional text paragraphs
-                    entry.target.querySelectorAll('.additional-text p').forEach((p, index) => {
-                        setTimeout(() => {
-                            p.style.opacity = '1'; // Change opacity to 1
-                        }, index * 500); // Delay each paragraph by 0.5s
+                    entry.target.querySelectorAll('.additional-text p').forEach(p => {
+                        p.style.opacity = '1'; // Change opacity to 1
                     });
                 }
             } else {
@@ -215,29 +84,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create a new IntersectionObserver instance
     const observer = new IntersectionObserver(handleIntersect, observerConfig);
 
-    // Target the elements to be observed for fly-in animation
-    const sectionsToAnimate = document.querySelectorAll('.fly-in-left, .fly-in-right');
-
     // Start observing each target element for fly-in animation
     sectionsToAnimate.forEach(section => {
         observer.observe(section);
     });
 
-    // Target the About Me section for fade-in animation
-    const aboutSection = document.querySelector('.about-section');
-
-    // Start observing the About Me section for fade-in animation
+    // Start observing other sections
     observer.observe(aboutSection);
-
-    // Target the gallery section
-    const gallerySection = document.querySelector('.gallery');
-
-    // Start observing the gallery section
     observer.observe(gallerySection);
-
-    // Target the newsletter section
-    const newsletterSection = document.querySelector('#newsletter');
-
-    // Start observing the newsletter section
     observer.observe(newsletterSection);
 });
