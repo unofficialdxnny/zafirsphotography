@@ -517,6 +517,16 @@ body, html {
     transform: scale(1.05);
   }
   
+  .item {
+    /* Existing styles */
+    opacity: 0;
+    transition: opacity 4s ease;
+}
+
+.item.animate-item {
+    opacity: 1;
+}
+
   @media screen and (max-width: 768px) {
     .gallery {
       padding: 30px 0;

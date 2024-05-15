@@ -134,7 +134,10 @@ document.querySelectorAll('.navbar-nav a').forEach(anchor => {
 });
 
 
-// tools animation
+
+// animations 
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Animation observer configuration
     const observerConfig = {
@@ -153,12 +156,28 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     entry.target.classList.add('animate-fly-in');
                 }
+                
+                // For gallery section
+                if (entry.target.classList.contains('gallery')) {
+                    entry.target.querySelectorAll('.item').forEach((item, index) => {
+                        setTimeout(() => {
+                            item.classList.add('animate-item');
+                        }, index * 500); // Adjust the delay as needed (500ms here for 0.5s delay)
+                    });
+                }
             } else {
                 // If the section is not intersecting with the viewport
                 if (entry.target.classList.contains('about-section')) {
                     entry.target.classList.remove('fade-in');
                 } else {
                     entry.target.classList.remove('animate-fly-in');
+                }
+                
+                // For gallery section
+                if (entry.target.classList.contains('gallery')) {
+                    entry.target.querySelectorAll('.item').forEach(item => {
+                        item.classList.remove('animate-item');
+                    });
                 }
             }
         });
@@ -180,4 +199,10 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Start observing the About Me section for fade-in animation
     observer.observe(aboutSection);
+  
+    // Target the gallery section
+    const gallerySection = document.querySelector('.gallery');
+  
+    // Start observing the gallery section
+    observer.observe(gallerySection);
 });
