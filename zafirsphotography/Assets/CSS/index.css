@@ -584,7 +584,7 @@ body, html {
 
 
 
-  #preloader {
+/* #preloader {
     background-color: #222;
 
     position: fixed;
@@ -656,4 +656,4 @@ body, html {
         -ms-transform: rotate(360deg);
         transform: rotate(360deg);
     }
-}
+} */
