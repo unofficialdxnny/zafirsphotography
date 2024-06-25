@@ -14,88 +14,25 @@
     background-size: cover;
 }
 
-.navbar {
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
-}
-
-.navbar-light .navbar-nav .nav-link {
-    color: #555;
-    transition: color 0.3s ease;
-
+nav {
+    border: solid 1px black;
 }
 
 .navbar-nav {
-    display: flex;
-    align-items: center;
+    flex: 1;
     justify-content: center;
-    text-align: center;
 }
 
-.navbar-light .navbar-nav .nav-link:hover {
-    color: #007bff;
-}
-
-.navbar-light .navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #007bff;
-    transition: color 0.3s ease;
-}
-
-.navbar-light .navbar-brand:hover {
-    color: #0056b3;
-}
-
-.social-icons .nav-link {
-    color: #555;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
-}
-
-.social-icons .nav-link:hover {
-    color: #007bff;
-}
-
-.navbar-nav .social-icons {
-    align-items: right;
+.navbar .social-icons {
     display: flex;
-    justify-content: right;
+    gap: 10px;
+    color: black;
 }
 
-@media (max-width: 768px) {
-    .navbar-collapse {
-        justify-content: center;
-        background: #f8f9fa;
-    }
+.social-icons a {
+    color: black;
+}
 
-    .navbar-toggler {
-        order: 3;
-    }
-
-    .navbar-nav {
-        order: 2;
-        margin-top: 0;
-        text-align: center;
-        /* Centering links on mobile */
-    }
-
-    .social-icons {
-        order: 1;
-        margin-top: 0.5rem;
-    }
-
-    .navbar-light .navbar-brand {
-        font-size: 1.2rem;
-    }
-
-    .navbar-light .navbar-nav .nav-link {
-        font-size: 1rem;
-        text-align: center;
-        /* Centering links on mobile */
-    }
-
-    .social-icons .nav-link {
-        font-size: 1.2rem;
-    }
+.social-icons a:hover {
+    color: rgb(131, 131, 131);
 }
