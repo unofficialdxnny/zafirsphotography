@@ -18,3 +18,54 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+
+
+
+// contact form
+
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const username = document.getElementById('username').value;
+    const message = document.getElementById('message').value;
+
+    const webhookUrl = 'YOUR_DISCORD_WEBHOOK_URL';
+
+    const data = {
+        username: "Contact Form Bot",
+        embeds: [{
+            title: "New Message from Contact Form",
+            fields: [
+                {
+                    name: "Username",
+                    value: username,
+                    inline: true
+                },
+                {
+                    name: "Message",
+                    value: message,
+                    inline: false
+                }
+            ],
+            color: 0x00ff00
+        }]
+    };
+
+    fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    }).then(response => {
+        if (response.ok) {
+            alert('Message sent successfully!');
+            document.getElementById('contactForm').reset();
+        } else {
+            alert('Error sending message.');
+        }
+    }).catch(error => {
+        console.error('Error:', error);
+        alert('Error sending message.');
+    });
+});
