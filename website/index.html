@@ -15,115 +15,21 @@
 <body>
     <section class="header"></section>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">ZAFIR CREATIVE STUDIO</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-section="home">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-section="about">ABOUT</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-section="services">SERVICES</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-section="gallery">GALLERY</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-section="gfx">GRAPHICS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" data-section="contact">CONTACT</a>
-                    </li>
-                </ul>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com" target="_blank" class="nav-link">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.instagram.com" target="_blank" class="nav-link">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
+    <div class="sidenav" id="sidenav">
+        <br>
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleNav()">&times;</a>
+        <div id="status-circle" class="status-circle">
+            <img id="logo-img" src="./Assets/Images/favicon.png" alt="Logo" class="logo">
         </div>
-    </nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </div>
 
-    <section id="home" class="content-section active-section">
-        <h1>WELCOME TO ZAFIR CREATIVE STUDIO</h1>
-        <p>Welcome to Zafir Creative Studio, where moments come to life through the lens and designs captivate the eye.
-            Based in the picturesque Surrey Hills, Zafir Creative Studio is dedicated to capturing the beauty of life
-            and creating visually appealing designs.</p>
-        <p>Photography Our photography team, consisting of four talented individuals, specializes in capturing the
-            essence and beauty of the Surrey Hills. We bring landscapes and unique moments to life through the lens.
-            Explore our
-            photography portfolio by visiting the "Photography" tab or our social media links.</p>
-        <p>Graphic and Web Design In addition to photography, our dedicated graphic and web design team of two is
-            passionate about creating stunning visual designs. From simple logos to complex compositions, our design
-            work is continuously refined and shared with enthusiasm. We are also expanding our expertise into web design
-            and learning HTML, aiming to create engaging and user-friendly websites. To see our projects, please visit
-            the "Graphics Work" tab.</p>
-        <p>Thank you for visiting Zafir Creative Studio. We hope you enjoy exploring our photography and design work.
-            Should you have any questions or wish to connect, please feel free to reach out. Your support is greatly
-            appreciated as we continue to pursue our creative passions.</p>
-    </section>
-
-    <section id="about" class="content-section about-me">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>About Me</h2>
-                <p>Hello! I am Zafir, a passionate photographer and graphic designer. With years of experience in
-                    capturing moments and creating stunning visuals, I bring a unique perspective to every project. My
-                    journey began with a simple camera and has evolved into a full-fledged creative studio, where I
-                    blend photography and graphics to tell compelling stories.</p>
-                <p>From portraits to landscapes, from logos to full branding packages, I strive to deliver high-quality
-                    work that exceeds client expectations. Let's create something amazing together!</p>
-            </div>
-            <div class="about-image">
-                <img src="https://picsum.photos/300" alt="Profile Picture">
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="content-section">
-        <h2>Our Services</h2>
-        <p>Details about the services offered by ZAFIR CREATIVE STUDIO.</p>
-    </section>
-
-    <section id="gallery" class="content-section">
-        <h2>Gallery</h2>
-        <p>My Photo Gallery...</p>
-    </section>
-
-    <section id="gfx" class="content-section">
-        <h2>Graphics</h2>
-        <p>My Graphics Gallery...</p>
-    </section>
-
-    <section id="contact" class="content-section">
-        <h2>Contact Us</h2>
-        <p>About any Suggestions, requests etc through this form.</p>
-        <br><br>
-        <div class="form-container">
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="username">Name/Username</label>
-                    <input type="text" id="username" name="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit">Send</button>
-            </form>
-        </div>
-    </section>
+    <div id="main">
+        <span class="openbtn" style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span>
+    </div>
 
     <script src="./Assets/JS/index.js"></script>
     <!-- Bootstrap JS and dependencies -->
