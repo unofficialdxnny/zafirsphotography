@@ -49,11 +49,17 @@ body {
     width: 100%;
     height: 25vh;
     background-color: grey;
-    background-image: url('https://picsum.photos/1920/1080');
+    background-image: url('../Images/banner.gif');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.header.last-frame {
+    background-image: url('../Images/last\ frame.png');
+    /* Adjust the path to your last frame image */
+}
+
 
 .sidenav {
     height: 100%;
@@ -173,6 +179,7 @@ body {
     align-items: center;
     text-align: center;
     height: calc(75vh - 100px);
+
     /* 75% of viewport height minus header height */
     padding: 20px;
 }
@@ -209,6 +216,8 @@ body {
 }
 
 @media screen and (max-height: 450px) {
+
+
     .sidenav {
         padding-top: 15px;
     }

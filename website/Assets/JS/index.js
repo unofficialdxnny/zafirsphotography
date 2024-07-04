@@ -62,7 +62,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         circleColor = '#66b3ff'; // gray
                         break;
                     case 'invisible':
-                        addRgbAnimation = true; // trigger RGB animation for invisible status
+                        // addRgbAnimation = true; // trigger RGB animation for invisible status
+                        circleColor = "#111";
                         break;
                     default:
                         circleColor = '#000000'; // black
@@ -101,3 +102,13 @@ document.addEventListener('DOMContentLoaded', function () {
     updateDiscordStatus();
     setInterval(updateDiscordStatus, 1000);
 });
+
+// header stop gif on last frame
+
+// Adjust the duration to match the length of your GIF in milliseconds
+const gifDuration = 5000; // e.g., 5000ms = 5 seconds
+
+setTimeout(function () {
+    document.querySelector('.header').classList.add('last-frame');
+}, gifDuration);
+
