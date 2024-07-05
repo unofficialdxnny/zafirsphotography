@@ -21,19 +21,34 @@
         <div id="status-circle" class="status-circle">
             <img id="logo-img" src="./Assets/Images/favicon.png" alt="Logo" class="logo">
         </div>
-        <a class="trade-winds-regular" href="#home">Home</a>
-        <a class="trade-winds-regular" href="#services">Services</a>
-        <a class="trade-winds-regular" href="#portfolio">Portfolio</a>
-        <a class="trade-winds-regular" href="#contact">Contact</a>
+        <a class="trade-winds-regular" href="#home" onclick="showSection('home')">Home</a>
+        <a class="trade-winds-regular" href="#services" onclick="showSection('services')">Services</a>
+        <a class="trade-winds-regular" href="#portfolio" onclick="showSection('portfolio')">Portfolio</a>
+        <a class="trade-winds-regular" href="#contact" onclick="showSection('contact')">Contact</a>
     </div>
 
     <div id="main">
         <span class="openbtn" style="font-size:30px;cursor:pointer" onclick="toggleNav()">&#9776;</span>
     </div>
 
-    <section class="centered-section">
+    <section id="home" class="centered-section">
         <h1 class="kelly-slab-regular">Welcome to Zafir Creative Studio</h1>
         <p class="trade-winds-regular">Crafting Your Ideas into Reality</p>
+    </section>
+
+    <section id="services" class="centered-section" style="display:none;">
+        <h1 class="kelly-slab-regular">Our Services</h1>
+        <p class="trade-winds-regular">We offer a wide range of creative services.</p>
+    </section>
+
+    <section id="portfolio" class="centered-section" style="display:none;">
+        <h1 class="kelly-slab-regular">Our Portfolio</h1>
+        <p class="trade-winds-regular">Check out our amazing work.</p>
+    </section>
+
+    <section id="contact" class="centered-section" style="display:none;">
+        <h1 class="kelly-slab-regular">Contact Us</h1>
+        <p class="trade-winds-regular">Get in touch with us.</p>
     </section>
 
     <script src="./Assets/JS/index.js"></script>

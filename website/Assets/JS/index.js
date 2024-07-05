@@ -112,3 +112,27 @@ setTimeout(function () {
     document.querySelector('.header').classList.add('last-frame');
 }, gifDuration);
 
+function toggleNav() {
+    const sidenav = document.getElementById("sidenav");
+    const main = document.getElementById("main");
+
+    if (sidenav.style.left === "-250px") {
+        sidenav.style.left = "0";
+        main.style.marginLeft = "250px";
+    } else {
+        sidenav.style.left = "-250px";
+        main.style.marginLeft = "0";
+    }
+}
+
+function showSection(sectionId) {
+    const sections = document.querySelectorAll(".centered-section");
+    sections.forEach(section => {
+        if (section.id === sectionId) {
+            section.style.display = "flex";
+        } else {
+            section.style.display = "none";
+        }
+    });
+
+}
