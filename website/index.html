@@ -10,43 +10,30 @@
 
 <body>
 
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h2>ZCS</h2>
-            <button class="close-btn" id="closeBtn" onclick="toggleSidebar()">×</button>
-        </div>
-        <ul class="sidebar-menu">
-            <li><a href="#home" onclick="showSection('home')">Home</a></li>
-            <li><a href="#services" onclick="showSection('services')">Photography</a></li>
-            <li><a href="#clients" onclick="showSection('clients')">Graphics</a></li>
-            <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
-        </ul>
+    <div class="header">
+        <h1 class="title"><span class="highlight">Zafirs Creative Studio</h1>
     </div>
 
-    <div class="content" id="content">
-        <button class="open-btn" id="openBtn" onclick="toggleSidebar()">☰</button>
-        <header class="header">
-            <h1>Zafirs Creative Studio</h1>
-        </header>
-        <main>
-            <section id="home" class="section">
-                <h2>Home</h2>
-                <p>Welcome to the home section.</p>
-            </section>
-            <section id="services" class="section">
-                <h2>Photography</h2>
-                <p>Our photography services are top-notch.</p>
-            </section>
-            <section id="clients" class="section">
-                <h2>Graphics</h2>
-                <p>Our graphic design services are creative and innovative.</p>
-            </section>
-            <section id="contact" class="section">
-                <h2>Contact</h2>
-                <p>Get in touch with us through this section.</p>
-            </section>
-        </main>
-    </div>
+    <section class="main">
+        <div class="main-content">
+            <h1 class="title">Hey, I'm <strong>Zafir!</strong></h1>
+            <p class="text">A passionate Graphics Designer and Photographer</p>
+            <br>
+            <p class="text-main">
+                A passionate <span class="highlight">Graphic Designer</span> and <span
+                    class="highlight">Photographer</span> based in Surrey Hills.
+                With over two years of
+                experience in the industry, I specialize in [Using my creating brain to seek the best image on
+                photoshop] and have had the pleasure of
+                working with clients such as Big Jack Farms, Lifesteal, PloitZ, And More!!.
+            </p>
+            <div class="software">
+                <img src="./Assets/Images/Illustrator.png" alt="Illustrator" class="src">
+                <img src="./Assets/Images/ps.png" alt="Illustrator" class="src">
+                <img src="./Assets/Images/LR (1).png" alt="Illustrator" class="src">
+            </div>
+        </div>
+    </section>
 
     <script src="./Assets/JS/index.js"></script>
 </body>
