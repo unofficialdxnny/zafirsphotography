@@ -16,19 +16,37 @@
             <button class="close-btn" id="closeBtn" onclick="toggleSidebar()">×</button>
         </div>
         <ul class="sidebar-menu">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Photography</a></li>
-            <li><a href="#clients">Graphics</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" onclick="showSection('home')">Home</a></li>
+            <li><a href="#services" onclick="showSection('services')">Photography</a></li>
+            <li><a href="#clients" onclick="showSection('clients')">Graphics</a></li>
+            <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
         </ul>
     </div>
 
     <div class="content" id="content">
         <button class="open-btn" id="openBtn" onclick="toggleSidebar()">☰</button>
-
+        <header class="header">
+            <h1>Zafirs Creative Studio</h1>
+        </header>
+        <main>
+            <section id="home" class="section">
+                <h2>Home</h2>
+                <p>Welcome to the home section.</p>
+            </section>
+            <section id="services" class="section">
+                <h2>Photography</h2>
+                <p>Our photography services are top-notch.</p>
+            </section>
+            <section id="clients" class="section">
+                <h2>Graphics</h2>
+                <p>Our graphic design services are creative and innovative.</p>
+            </section>
+            <section id="contact" class="section">
+                <h2>Contact</h2>
+                <p>Get in touch with us through this section.</p>
+            </section>
+        </main>
     </div>
-
-
 
     <script src="./Assets/JS/index.js"></script>
 </body>
