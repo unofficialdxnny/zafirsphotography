@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
+    user-select: none;
 }
 
 body {
@@ -11,6 +12,9 @@ body {
 }
 
 .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border: 1px solid white;
     padding: 10px;
     color: #BDC3C7;
@@ -39,10 +43,7 @@ body {
 .highlight {
     background-color: wheat;
     color: black;
-
 }
-
-
 
 .main .main-content .text {
     font-size: 25px;
@@ -63,5 +64,12 @@ span {
     width: 50px;
     position: relative;
     margin-top: 50px;
-    margin-right: 100px;
+    margin-right: 10px;
+}
+
+.spotify img.snp {
+    vertical-align: middle;
+    width: 200px;
+    /* adjust as needed */
+    height: auto;
 }
